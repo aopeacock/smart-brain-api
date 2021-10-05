@@ -18,9 +18,9 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-db.select('*').from('users').then(data => {
-    console.log('db up');
-  });
+// db.select('*').from('users').then(data => {
+//     console.log('db up');
+//   });
 
 
 const app = express();
@@ -49,9 +49,9 @@ app.use(cors());
 //     ]
 // }
 
-// app.get('/', (req, res) => {
-//     res.send(database.users);
-// })
+app.get('/', (req, res) => {
+    res.send('it is working!');
+})
 
 app.post('/signin', signin.handleSignin( db, bcrypt))
 
